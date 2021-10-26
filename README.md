@@ -4,4 +4,4 @@ also, there's not every function. it's just the helper kernel driver. (tbh i'm n
 name:EQU8_HELPER_36.sys<br/>
 
 corrections:<br/>
-resolve_proc can be callbacks, hesitant.
+resolve_proc can be callbacks, I hesitate.
