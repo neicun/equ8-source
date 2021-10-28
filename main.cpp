@@ -1,10 +1,10 @@
 // main.cpp
 
-__int64 __fastcall real_driver_entry(_QWORD *driver_object, __int64 registry_path)
+NTSTATUS real_driver_entry(_QWORD *driver_object, __int64 registry_path) // Decompiler defines it as __int64 __fastcall
 {
-  int device; // ebx
-  char exclusive; // [rsp+28h] [rbp-20h]
-  __int64 device_object; // [rsp+60h] [rbp+18h] BYREF
+  int device;
+  char exclusive;
+  __int64 device_object;
 
   device_object = 0i64;
   device = get_device(registry_path);
@@ -34,7 +34,7 @@ __int64 __fastcall real_driver_entry(_QWORD *driver_object, __int64 registry_pat
   return (unsigned int)device;
 }
 
-__int64 __fastcall DriverEntry(__int64 DriverObject, __int64 RegistryPath)
+NTSTATUS DriverEntry(__int64 DriverObject, __int64 RegistryPath) // Decompiler defines it as __int64 __fastcall 
 {
   _security_init_cookie();
   return real_driver_entry((_QWORD *)DriverObject, RegistryPath);
